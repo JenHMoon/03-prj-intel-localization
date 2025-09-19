@@ -10,6 +10,27 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Google Fonts: Noto Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    // RTL 언어 코드 목록
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    function detectAndSetRTL() {
+      // 현재 <html>의 lang 속성 확인
+      const html = document.documentElement;
+      const lang = html.lang ? html.lang.toLowerCase() : '';
+      if (rtlLangs.includes(lang)) {
+        html.setAttribute('dir', 'rtl');
+      } else {
+        html.setAttribute('dir', 'ltr');
+      }
+    }
+    // 초기 실행
+    detectAndSetRTL();
+    // Google Translate 등으로 lang 속성이 변경될 때 감지
+    const observer = new MutationObserver(() => {
+      detectAndSetRTL();
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
 </head>
 <body>
 
@@ -197,7 +218,7 @@
 
   <!-- Footer -->
   <footer class="bg-light border-top mt-5 py-4">
-    <div class="container text-center"></div>
+  <div class="container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
       <nav class="mb-2" aria-label="Footer Navigation">
         <ul class="list-inline mb-0">
           <li class="list-inline-item"><a href="#" class="mx-2 text-decoration-none" style="color: #222;" aria-label="Footer Privacy Policy Link">Privacy Policy</a></li>

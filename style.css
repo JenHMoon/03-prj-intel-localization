@@ -1,3 +1,7 @@
+	background-color: #0071C5 !important;
+	border-color: #0071C5 !important;
+	color: #fff !important;
+}
 footer, .center-info {
 	text-align: center !important;
 }
@@ -25,8 +29,8 @@ footer, .center-info {
 	margin: 48px 0;
 }
 .column-section .column-box {
-		background: #f8fafc;
-		border: 1px solid #e3e8ee;
+		background: #f5f5f5;
+		border: 1px solid #ddd;
 		box-shadow: none;
 		padding: 32px 24px;
 		margin-bottom: 24px;
@@ -39,7 +43,7 @@ footer, .center-info {
 .column-section h2 {
 		font-size: 1.3rem;
 		font-weight: 700;
-		color: #005fa3;
+		color: #0071C5;
 		margin-bottom: 10px;
 		/* text-align은 [dir]에 따라 자동 적용됨 */
 }
@@ -68,6 +72,13 @@ h3 {
 	transition: box-shadow 0.18s, transform 0.18s;
 }
 /* Add your CSS here */
+/* Learn More, Subscribe 버튼 색상 변경 */
+.btn-primary,
+.column-section .btn {
+	background-color: #0071C5 !important;
+	border-color: #0071C5 !important;
+	color: #fff !important;
+}
 
 body {
 	box-sizing: border-box;
