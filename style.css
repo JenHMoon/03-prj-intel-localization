@@ -1,31 +1,78 @@
-section > div:hover {
+/* 3-Column Section 전용 디자인 */
+.column-section {
+	margin: 48px 0;
+}
+.column-section .column-box {
+		background: #f8fafc;
+		border: 1px solid #e3e8ee;
+		box-shadow: none;
+		padding: 32px 24px;
+		margin-bottom: 24px;
+		text-align: left;
+		max-width: 400px;
+		min-width: auto;
+		margin-left: 12px;
+  	margin-right: 12px;
+}
+.column-section h2 {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: #005fa3;
+		margin-bottom: 10px;
+		text-align: left;
+}
+.column-section p {
+		font-size: 1rem;
+		color: #222;
+		text-align: left;
+}
+.column-section .btn {
+	margin-top: 12px;
+}
+
+/* h2와 h3 폰트 크기 및 h3 볼드 적용 */
+h2 {
+	font-size: 1.2rem;
+  	font-weight: 600;   /* 볼드 처리 */
+} 
+h3 {
+	font-size: 1.2rem; /* 기본보다 작게 */
+	font-weight: 600;   /* 볼드 처리 */
+}
+ .timeline-section > div:hover {
 	box-shadow: 0 12px 32px 0 rgba(0, 80, 180, 0.28), 0 4px 16px rgba(0,0,0,0.18);
 	z-index: 3;
 	transform: scale(1.04);
 	transition: box-shadow 0.18s, transform 0.18s;
 }
+/* Add your CSS here */
+
 body {
 	box-sizing: border-box;
 	overflow-x: hidden;
 }
+body {
+	font-family: 'Noto Sans', Arial, sans-serif;
+	/* ...기존 스타일... */
+}
 /* 카드 내 h2, h3 왼쪽 정렬 및 간격 조정 */
-section > div h2,
-section > div h3 {
+ .timeline-section > div h2,
+ .timeline-section > div h3 {
 	text-align: left;
 	margin-left: 0;
 	margin-right: 0;
 }
-section > div h2 {
+ .timeline-section > div h2 {
 	margin-bottom: 4px;
 	margin-top: 0.1em;
 }
-section > div h3 {
+ .timeline-section > div h3 {
 	margin-top: 0;
 	margin-bottom: 20px;
 }
 
 /* 카드 내 이미지 크게, 정사각형에 가깝고 오른쪽까지 넓게 */
-section > div img {
+ .timeline-section > div img {
 	width: 98%;
 	max-width: 240px;
 	aspect-ratio: 1/1;
@@ -37,8 +84,8 @@ section > div img {
 	margin-right: 0;
 }
 /* 카드 내부 h2, h3만 어두운 색으로 */
-section > div h2,
-section > div h3 {
+ .timeline-section > div h2,
+ .timeline-section > div h3 {
 	color: #0068B5;
 }
 /* 하단 안내 문구를 가운데 정렬 */
@@ -49,11 +96,12 @@ section > div h3 {
 	color: #333;
 }
 /* 카드 설명(p)을 이미지 위에 오버레이로 표시 */
-section > div {
+ .timeline-section > div {
 	position: relative;
 }
 
-section > div p {
+/* 타임라인 카드(첫 번째 section)만 오버레이 효과 적용 */
+section:first-of-type > div p {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -75,14 +123,14 @@ section > div p {
 	box-sizing: border-box;
 }
 
-section > div:hover p,
-section > div:focus-within p {
+section:first-of-type > div:hover p,
+section:first-of-type > div:focus-within p {
 	opacity: 1;
 	pointer-events: auto;
 }
 
 /* 카드 내 이미지가 오버레이 아래에 있도록 z-index 조정 */
-section > div img {
+ .timeline-section > div img {
 	position: relative;
 	z-index: 1;
 }
@@ -134,72 +182,63 @@ header hr.hero-divider {
 	opacity: 0.5;
 }
 /* 타임라인 카드 섹션: 가로 스크롤 및 반응형 레이아웃 */
-section {
+/* 타임라인 카드 섹션에만 flex 레이아웃과 카드 스타일 적용 */
+.timeline-section {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 	overflow-x: auto;
 	overflow-y: visible;
 	padding: 24px 0;
-	max-width: 1120px; /* 4개 카드+간격 */
+	max-width: 1120px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	/* 스크롤바가 항상 보이지 않게 하려면 필요시 아래 라인 추가 */
-	/* scrollbar-width: thin; */
 }
-
-	section > div {
-		/* 각 카드를 카드처럼 보이게 스타일링 */
-		background: #f5f5f5;
-		border: 1px solid #ddd;
-		min-width: 240px;
-		max-width: 260px;
-		width: 100%;
-		flex: 0 0 260px; /* 4개가 한 화면에 보이도록 */
-		padding: 20px;
-		box-sizing: border-box;
-		text-align: center;
-		transition: box-shadow 0.2s;
-		color: #ffffff;
-		font-family: 'Neo Sans', 'Neo Sans Bold', Arial, sans-serif;
-		position: relative;
-	}
+.timeline-section > div {
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	min-width: 240px;
+	max-width: 260px;
+	width: 100%;
+	flex: 0 0 260px;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+	transition: box-shadow 0.2s;
+	color: #ffffff;
+	font-family: 'Neo Sans', 'Neo Sans Bold', Arial, sans-serif;
+	position: relative;
+}
 /* 작은 화면(모바일)에서는 세로로 쌓이도록 변경 */
 @media (max-width: 600px) {
-	section > div h2,
-	section > div h3 {
-		text-align: left;
-		padding-left: 16px;
-		padding-right: 16px;
-		padding-left: 16px;
-		padding-right: 16px;
-	}
-	section > div img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-		section {
-			flex-direction: column;
-			gap: 16px;
-			overflow-x: visible;
-			max-width: 100vw;
-			margin: 0;
-			padding: 0 12px;
-			box-sizing: border-box;
-		padding: 0;
-		box-sizing: border-box;
-	}
-		section > div {
-			min-width: 100%;
-			max-width: 100%;
-			width: 100%;
-			flex: 1 1 100%;
-			box-sizing: border-box;
-			margin: 0;
-			/* 카드 내부 패딩은 그대로 두고, section에만 좌우 여백 */
-			padding-left: 0;
-			padding-right: 0;
-	}
+  .timeline-section {
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: visible;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+  .timeline-section > div {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .timeline-section > div h2,
+  .timeline-section > div h3 {
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .timeline-section > div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-/* Add your CSS here */
